@@ -1,6 +1,14 @@
 import mysql.connector
 from mysql.connector import errorcode
 
+### AUTHOR: Davit Julakidze
+### License: GNU PUBLIC V3
+### 07/02/2018
+
+
+
+
+
 def connect_to_database(config):
     try:
         database = mysql.connector.connect(**config)

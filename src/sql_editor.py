@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import font  as tkfont 
 from sql_create_and_update import *
 
+### AUTHOR: Davit Julakidze
+### License: GNU PUBLIC V3
+### 07/02/2018
 
 
 
