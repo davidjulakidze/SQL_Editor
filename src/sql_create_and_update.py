@@ -60,7 +60,7 @@ def update_entry(LastName, FirstName, CurrenteMail, table = "test_directory",
                 eMail = "eMail", eMailValue = "",cursor = database.cursor()):
     update_employee = ("""UPDATE %s 
                           SET %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s" 
-                          WHERE LastName = "%s" AND FirstName = "%s" AND eMail = "%s" """ % (table, 
+                          WHERE eMail = "%s" """ % (table, 
                           STI_location, locationValue,
                           Title, TitleValue,
                           Office_Phone, OfficeValue,
