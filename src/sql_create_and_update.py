@@ -28,9 +28,9 @@ def connect_to_database(config):
 
 database = connect_to_database(config = {
     'user': 'root',
-    'password': 'strUcT@dm!',
-    'host': 'stonyintranet01',
-    'database': 'wordpress',
+    'password': '',
+    'host': '',
+    'database': '',
 })
 
 
