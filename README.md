@@ -18,14 +18,14 @@ This code is licensed with GNU Public v3 License
 # Changelog
 V 2.0
 ----------
-Changed Update entry to only require email address of the entry
-Fixed bug where people with the same last name wouldn't be added
-Added Error handling
-Made email field required in order to update/create entry
+Changed Update entry to only require email address of the entry \n
+Fixed bug where people with the same last name wouldn't be added \n
+Added Error handling \n
+Made email field required in order to update/create entry \n
 
 
 V 1.0
 -----------
-Added Create new entry 
-Added Update Entry
+Added Create new entry \n
+Added Update Entry \n
 Fixed problem where update entry didnt work when there was no email enterred
