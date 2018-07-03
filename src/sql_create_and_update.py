@@ -87,6 +87,3 @@ def update_entry(CurrenteMail, table = "test_directory",
             return "Updated!"
     except:
         return "Error"
-
-
-

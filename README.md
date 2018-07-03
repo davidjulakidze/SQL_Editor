@@ -16,6 +16,14 @@ then navigate to your build directory and double click on sql_editor.exe
 This code is licensed with GNU Public v3 License
 
 # Changelog
+V 2.0
+----------
+Changed Update entry to only require email address of the entry
+Fixed bug where people with the same last name wouldn't be added
+Added Error handling
+Made email field required in order to update/create entry
+
+
 V 1.0
 -----------
 Added Create new entry 
