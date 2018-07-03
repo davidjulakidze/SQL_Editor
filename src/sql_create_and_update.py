@@ -27,22 +27,28 @@ def connect_to_database(config):
 ## FILL OUT BELOW
 
 database = connect_to_database(config = {
-    'user': '',
-    'password': '',
-    'host': '',
-    'database': '',
+    'user': 'root',
+    'password': 'strUcT@dm!',
+    'host': 'stonyintranet01',
+    'database': 'wordpress',
 })
 
 
 
 def make_new_entry(LastName, FirstName, STI_location, Title, Office_Phone="", Mobile_Phone="", Ext="", eMail="", table = "test_directory", cursor = database.cursor()):
 
-    add_employee = ("""INSERT INTO %s (LastName,FirstName,STI_Location,Title,Office_Phone,Mobile_Phone,Ext,eMail) 
-                    VALUES ("%s","%s","%s","%s","%s","%s","%s","%s")
-                    """% (table, LastName, FirstName, STI_location, Title, Office_Phone, Mobile_Phone, Ext, eMail))
-    cursor.execute(add_employee)
-    database.commit()
-    return True
+    try:
+        if(eMail == ""):
+            return "Error: Invalid email"
+        else:
+            add_employee = ("""INSERT INTO %s (LastName,FirstName,STI_Location,Title,Office_Phone,Mobile_Phone,Ext,eMail) 
+                        VALUES ("%s","%s","%s","%s","%s","%s","%s","%s")
+                        """% (table, FirstName, LastName, STI_location, Title, Office_Phone, Mobile_Phone, Ext, eMail))
+            cursor.execute(add_employee)
+            database.commit()
+            return "Created!"
+    except:
+        return "Error: Potential Duplicate"
 
 def close_cursor(cursor):
     return cursor.close()
@@ -57,19 +63,30 @@ def update_entry(CurrenteMail, table = "test_directory",
                 Office_Phone = "Office_Phone", OfficeValue = "",
                 Mobile_Phone = "Mobile_Phone", MobileValue = "",
                 Ext = "Ext", ExtValue = "",
-                eMail = "eMail", eMailValue = "",cursor = database.cursor()):
-    update_employee = ("""UPDATE %s 
-                          SET %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s" 
-                          WHERE eMail = "%s" """ % (table, 
-                          STI_location, locationValue,
-                          Title, TitleValue,
-                          Office_Phone, OfficeValue,
-                          Mobile_Phone, MobileValue,
-                          Ext, ExtValue,
-                          eMail, eMailValue,
-                          CurrenteMail))
-    cursor.execute(update_employee)
-    database.commit()
-    return True
+                eMail = "eMail", eMailValue = "",
+                firstName = "FirstName", firstNameValue= "",
+                lastName = "LastName", LastNameValue = "", cursor = database.cursor()):
+    try:
+        if(eMailValue == ""):
+            return "Error: Invalid Email"
+        else:
+            update_employee = ("""UPDATE %s 
+                            SET %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s" , %s = "%s", %s = "%s"
+                            WHERE eMail = "%s" """ % (table,
+                            firstName, firstNameValue,
+                            lastName, LastNameValue,
+                            STI_location, locationValue,
+                            Title, TitleValue,
+                            Office_Phone, OfficeValue,
+                            Mobile_Phone, MobileValue,
+                            Ext, ExtValue,
+                            eMail, eMailValue,
+                            CurrenteMail))
+            cursor.execute(update_employee)
+            database.commit()
+            return "Updated!"
+    except:
+        return "Error"
+
 
 
