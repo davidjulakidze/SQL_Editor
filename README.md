@@ -15,3 +15,9 @@ then navigate to your build directory and double click on sql_editor.exe
 # License
 This code is licensed with GNU Public v3 License
 
+# Changelog
+V 1.0
+-----------
+Added Create new entry 
+Added Update Entry
+Fixed problem where update entry didnt work when there was no email enterred
