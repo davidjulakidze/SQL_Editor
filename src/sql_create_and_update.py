@@ -51,7 +51,7 @@ def close_database(cursor = database.cursor()):
     close_cursor(cursor)
     return database.close()
 
-def update_entry(LastName, FirstName, CurrenteMail, table = "test_directory", 
+def update_entry(CurrenteMail, table = "test_directory", 
                 STI_location = "STI_location", locationValue = "",
                 Title = "Title", TitleValue = "",
                 Office_Phone = "Office_Phone", OfficeValue = "",
@@ -67,7 +67,7 @@ def update_entry(LastName, FirstName, CurrenteMail, table = "test_directory",
                           Mobile_Phone, MobileValue,
                           Ext, ExtValue,
                           eMail, eMailValue,
-                          LastName, FirstName, CurrenteMail))
+                          CurrenteMail))
     cursor.execute(update_employee)
     database.commit()
     return True

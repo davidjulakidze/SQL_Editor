@@ -72,7 +72,7 @@ class UpdateEntry(tk.Frame):
     def __init__(self, parent, controller):
         update_font = tkfont.Font(family='Helvetica', size=12, weight="bold", slant="italic")
         updateEntriesField = 'Location*', 'Title*', 'Office Phone', 'Mobile Phone', 'Ext', 'eMail'
-        whoToUpdate = 'First Name*','Last Name*', 'eMail*'
+        whoToUpdate = 'eMail*'
         entries = []
         tk.Frame.__init__(self, parent)
         self.controller = controller
@@ -118,8 +118,9 @@ def fetch_update(entries):
         field = entry[0]
         values.append(entry[1].get())
         entry[1].delete(0, tk.END)
-    print(update_entry(values[1],values[0], values[2], locationValue= values[3], TitleValue= values[4], OfficeValue=values[5], MobileValue=values[6], ExtValue=values[7], eMailValue=values[8]))
+    print(update_entry(values[2], locationValue= values[3], TitleValue= values[4], OfficeValue=values[5], MobileValue=values[6], ExtValue=values[7], eMailValue=values[8]))
 
+    
 if __name__ == "__main__":
     app = sqlEditor()
     app.mainloop()
