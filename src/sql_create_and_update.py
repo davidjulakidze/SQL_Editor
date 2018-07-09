@@ -35,7 +35,10 @@ database = connect_to_database(config = {
 
 
 
-def make_new_entry(LastName, FirstName, STI_location, Title, Office_Phone="", Mobile_Phone="", Ext="", eMail="", table = "test_directory", cursor = database.cursor()):
+def make_new_entry(LastName, FirstName, 
+                    STI_location, Title, Office_Phone="", 
+                    Mobile_Phone="", Ext="", eMail="", 
+                    table = "test_directory", cursor = database.cursor()):
 
     try:
         if(eMail == ""):
@@ -90,4 +93,4 @@ def update_entry(CurrenteMail, table = "test_directory",
             database.commit()
             return "Updated!"
     except:
-        return "Error"
+        return "Unknown Error"
