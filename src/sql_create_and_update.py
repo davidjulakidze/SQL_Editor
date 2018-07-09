@@ -40,6 +40,8 @@ def make_new_entry(LastName, FirstName, STI_location, Title, Office_Phone="", Mo
     try:
         if(eMail == ""):
             return "Error: Invalid email"
+        elif(LastName == "" or FirstName == "" or STI_location == "" or Title == ""):
+            return "Error: Please complete all fields marked with * "
         else:
             add_employee = ("""INSERT INTO %s (LastName,FirstName,STI_Location,Title,Office_Phone,Mobile_Phone,Ext,eMail) 
                         VALUES ("%s","%s","%s","%s","%s","%s","%s","%s")
@@ -69,6 +71,8 @@ def update_entry(CurrenteMail, table = "test_directory",
     try:
         if(eMailValue == ""):
             return "Error: Invalid Email"
+        elif(firstNameValue == "" or LastNameValue == "" or locationValue == "" or TitleValue == ""):
+            return "Error: Please complete all fields marked with * "
         else:
             update_employee = ("""UPDATE %s 
                             SET %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s", %s = "%s" , %s = "%s", %s = "%s"
