@@ -139,7 +139,7 @@ def fetch_update(entries):
         field = entry[0]
         values.append(entry[1].get())
         entry[1].delete(0, tk.END)
-    popupmsg(update_entry(values[0], firstNameValue= values[1], LastNameValue=[2], locationValue= values[3], TitleValue= values[4], OfficeValue=values[5], MobileValue=values[6], ExtValue=values[7], eMailValue=values[8]))
+    popupmsg(update_entry(values[0], firstNameValue= values[1], LastNameValue= values[2], locationValue= values[3], TitleValue= values[4], OfficeValue=values[5], MobileValue=values[6], ExtValue=values[7], eMailValue=values[8]))
 
     
 if __name__ == "__main__":
