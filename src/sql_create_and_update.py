@@ -41,10 +41,10 @@ def make_new_entry(LastName, FirstName,
                     table = "test_directory", cursor = database.cursor()):
 
     try:
-        if(eMail == ""):
-            return "Error: Invalid email"
-        elif(LastName == "" or FirstName == "" or STI_location == "" or Title == ""):
+        if(LastName == "" or FirstName == "" or STI_location == "" or Title == ""):
             return "Error: Please complete all fields marked with * "
+        elif(eMail == ""):
+            return "Error: Invalid email"
         else:
             add_employee = ("""INSERT INTO %s (LastName,FirstName,STI_Location,Title,Office_Phone,Mobile_Phone,Ext,eMail) 
                         VALUES ("%s","%s","%s","%s","%s","%s","%s","%s")

@@ -110,7 +110,7 @@ class UpdateEntry(tk.Frame):
             entries.append((lab, ent))
 
         what = tk.Label(self, text="Fill out fields you want to update", font= update_font, pady = 15)
-        note = tk.Label(self, text="Please note fields that are already up to date need to be enterred as well \n or they will be deleted", font= warning_font, pady = 15)
+        note = tk.Label(self, text="Please note fields that are already up to date need to be reenterred as well \n or they will be deleted", font= warning_font, pady = 15)
         what.pack()
         note.pack()
 
